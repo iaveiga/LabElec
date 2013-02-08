@@ -1,7 +1,10 @@
 \documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{amsfonts}
 \usepackage[normalem]{ulem}
+\usepackage{hyperref}
+
 
 \begin{document}
 
@@ -12,7 +15,7 @@
 \maketitle
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\linewidth]{./logo}
+	\includegraphics[width=0.7\linewidth]{./logo}
 \end{figure}
 
 
@@ -135,7 +138,7 @@ Hoy en día, si ha visto algún circuito comercial moderno, no se sorprenda si s
 \subsection{\underline{Funcionamiento del Circuito Integrado 555}}
 El temporizador 555 se puede conectar para que funcione de diferentes maneras, entre los más importantes están: como multivibrador astable y como multivibrador monoestable. Puede también configurarse para por ejemplo generar formas de onda tipo Rampa.
 
-\subsection{Multivibrador Astable}
+\subsection{Multivibrador Estable}
 Este tipo de funcionamiento se caracteriza por una salida con forma de onda cuadrada (o rectangular) continua de ancho predefinido por el diseñador del circuito. El esquema de conexión es el que se muestra. La señal de salida tiene un nivel alto por un tiempo t1 y un nivel bajo por un tiempo t2. La duración de estos tiempos dependen de los valores de R1, R2 y C, según las fórmulas siguientes:
 
 	\begin{figure}[h]
@@ -165,9 +168,10 @@ $T \approx 1,1 \cdot R \cdot C$
 Nótese que es necesario que la señal de disparo, en la terminal 2 del 555, sea de nivel bajo y de muy corta duración para iniciar la señal de salida.
 
 \subsection{\underline{INTEGRADO NE567 PLL}}
-\subsubsection{Descripción: }
-El NE567 es un detector de tono y frecuencia integrado y también puede usarse como generador de señal cuadrada. Por medio de componentes externos puede determinarse la frecuencia central de detección, el ancho de banda de esta, el delay de la señal de salida entre otras.
-\subsubsection{Funcionamiento: }
+Descripción:
+El NE567 es un detector de tono y frecuencia integrado y también puede usarse como generador de señal cuadrada. Por medio de componentes externos puede determinarse la frecuencia central de detección, el ancho de banda de esta, el delay de la señal de salida entre otras. \\
+
+Funcionamiento:
 El integrado NE567 activara su salida a nivel bajo cuando en su entrada se detecte una señal de tono o frecuencia igual al configurado en el NE567. Para configurar estos parámetros usaremos las siguientes fórmulas:
 
 	\begin{figure}[h]
@@ -185,68 +189,66 @@ $V_i$ = Input voltage ($\leq$ 200mVRMS)
 $C_2$ = Low-pass filter capacitor ($\mu$F)
 
 El valor del condensador C3 no es crítico y normalmente se usará la formula  $C3 = 2xC2$. Lo que hace este condensador es retardar la señal o pulso de salida, para detectar señales muy cortas se tendrá que baja su valor pero esto también hará que se active solo y sea inestable.
-Mirar el datasheet para ver las curvas características del integrado e información más detallada. 
+Mirar el datasheet para ver las curvas características del integrado e información más detallada. \\
 
-\subsubsection{Usos:}
+Usos
 El NE567 puede ser usado como detector de balizas para Infrarrojos con lo que podremos localizar una baliza que emita a determinada frecuencia, también puede ser usado para detección de ultrasonidos.
 
+\newpage
 \section{DIAGRAMA ESQUEMATICO DE LOS CIRCUITOS UTILIZADOS:}
 
 	\begin{figure}[h]
 		\caption{CIRCUITO EMISOR INFRARROJO}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./10}
+		\includegraphics[width=0.5\linewidth]{./10}
 	\end{figure}
 
 	\begin{figure}[h]
 		\caption{ISIS DEL CIRCUITO EMISOR INFRARROJO}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./11}
+		\includegraphics[width=0.6\linewidth]{./11}
 	\end{figure}
 
 	\begin{figure}[h]
 		\caption{CIRCUITO RECEPTOR INFRARROJO – TRANSMISOR RF}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./12}
+		\includegraphics[width=0.6\linewidth]{./12}
 	\end{figure}
 	
 	\begin{figure}[h]
 		\caption{CIRCUITO TRANSMISOR RF}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./13}
+		\includegraphics[width=0.6\linewidth]{./13}
 	\end{figure}	
-	
+	\newpage
 	\begin{figure}[h]
 		\caption{ISIS DEL CIRCUITO RECEPTOR INFRARROJO – TRANSMISOR RF}
 		\centering
-		\includegraphics[width=0.9\linewidth]{./14}
+		\includegraphics[width=0.6\linewidth]{./14}
 	\end{figure}
-
+%
 	\begin{figure}[h]
 		\caption{CIRCUITO RECEPTOR RF }
 		\centering
-		\includegraphics[width=0.7\linewidth]{./15}
+		\includegraphics[width=0.6\linewidth]{./15}
 	\end{figure}
-
+%
 	\begin{figure}[h]
 		\caption{CIRCUITO DE LA ALARMA}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./16}
+		\includegraphics[width=0.6\linewidth]{./16}
 	\end{figure}
-
+%
 	\begin{figure}[h]
 		\caption{ISIS DEL CIRCUITO RECEPTOR RF - ALARMA}
 		\centering
-		\includegraphics[width=0.7\linewidth]{./17}
-	\end{figure}
-	
-	\begin{figure}[h]
-		\caption{ISIS DEL CIRCUITO RECEPTOR RF - ALARMA}
-		\centering
-		\includegraphics[width=0.6\linewidth]{./18}
+		\includegraphics[width=1\linewidth]{./17}
 	\end{figure}
 \newpage
-\section{CÁLCULOS TEÓRICOS}
-Fuente de alimentación: 9 Voltios
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.9\linewidth]{./18}
+	\end{figure}
+\newpage
 
 \end{document}
